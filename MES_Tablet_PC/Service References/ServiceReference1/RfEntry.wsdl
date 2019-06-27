@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:intf="http://192.168.10.19:8080/axis/RfEntry.jws" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns1="http://data" xmlns:impl="http://192.168.10.19:8080/axis/RfEntry.jws" targetNamespace="http://192.168.10.19:8080/axis/RfEntry.jws" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://192.168.10.19:8080/axis/RfEntry.jws">
+      <xsd:import namespace="http://xml.apache.org/xml-soap" />
+      <xsd:import namespace="http://data" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:complexType name="ArrayOf_xsd_string">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="xsd:string[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOf_xsd_anyType">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="xsd:anyType[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfArrayOf_xsd_string">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="xsd:string[][]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xml.apache.org/xml-soap">
+      <xsd:import namespace="http://192.168.10.19:8080/axis/RfEntry.jws" />
+      <xsd:import namespace="http://data" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:complexType name="Vector">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="xsd:anyType" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://data">
+      <xsd:import namespace="http://192.168.10.19:8080/axis/RfEntry.jws" />
+      <xsd:import namespace="http://xml.apache.org/xml-soap" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:complexType name="DataTable">
+        <xsd:sequence>
+          <xsd:element name="columns" nillable="true" type="xsd:anyType" />
+          <xsd:element name="entityRows" nillable="true" type="impl:ArrayOf_xsd_anyType" />
+          <xsd:element name="readOnly" type="xsd:boolean" />
+          <xsd:element name="rows" nillable="true" type="xsd:anyType" />
+          <xsd:element name="tableName" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getColumnStringAllRequest">
+    <wsdl:part name="sql" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="TerminalRegisterResponse">
+    <wsdl:part name="TerminalRegisterReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="Get_Table_DateResponse">
+    <wsdl:part name="Get_Table_DateReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getDataTableRequest">
+    <wsdl:part name="sql" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTerminalResRequest">
+    <wsdl:part name="iMAC" type="xsd:string" />
+    <wsdl:part name="iUserid" type="xsd:string" />
+    <wsdl:part name="iPassword" type="xsd:string" />
+    <wsdl:part name="iLineCode" type="xsd:string" />
+    <wsdl:part name="iResCode" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="WorkRegisterResponse">
+    <wsdl:part name="WorkRegisterReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="mainResponse" />
+  <wsdl:message name="downloadFileRequest">
+    <wsdl:part name="sql" type="xsd:string" />
+    <wsdl:part name="colname" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getColumnStringAllResponse">
+    <wsdl:part name="getColumnStringAllReturn" type="impl:ArrayOf_xsd_anyType" />
+  </wsdl:message>
+  <wsdl:message name="TerminalRegisterRequest">
+    <wsdl:part name="iMAC" type="xsd:string" />
+    <wsdl:part name="iUserid" type="xsd:string" />
+    <wsdl:part name="iPassword" type="xsd:string" />
+    <wsdl:part name="iLineCode" type="xsd:string" />
+    <wsdl:part name="iResCode" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDataTableCResponse">
+    <wsdl:part name="GetDataTableCReturn" type="tns1:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="CheckRoutePassedResponse">
+    <wsdl:part name="CheckRoutePassedReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckUserAndResourcePassedResponse">
+    <wsdl:part name="CheckUserAndResourcePassedReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="downloadFileResponse">
+    <wsdl:part name="downloadFileReturn" type="xsd:base64Binary" />
+  </wsdl:message>
+  <wsdl:message name="getDataTableResponse">
+    <wsdl:part name="getDataTableReturn" type="impl:ArrayOfArrayOf_xsd_string" />
+  </wsdl:message>
+  <wsdl:message name="mainRequest">
+    <wsdl:part name="arg" type="impl:ArrayOf_xsd_string" />
+  </wsdl:message>
+  <wsdl:message name="verifyUserResponse">
+    <wsdl:part name="verifyUserReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTerminalResResponse">
+    <wsdl:part name="UpdateTerminalResReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="HelloResponse">
+    <wsdl:part name="HelloReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="Get_Table_DateRequest">
+    <wsdl:part name="TableName" type="xsd:string" />
+    <wsdl:part name="TableType" type="xsd:int" />
+    <wsdl:part name="SqlString" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getColumnStringRequest">
+    <wsdl:part name="sql" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getColumnStringResponse">
+    <wsdl:part name="getColumnStringReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckRoutePassedRequest">
+    <wsdl:part name="Sn" type="xsd:string" />
+    <wsdl:part name="Resource" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDataTableCRequest">
+    <wsdl:part name="sql" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckUserAndResourcePassedRequest">
+    <wsdl:part name="iUserCode" type="xsd:string" />
+    <wsdl:part name="iRescode" type="xsd:string" />
+    <wsdl:part name="iPassWord" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="HelloRequest" />
+  <wsdl:message name="getColumnStringsResponse">
+    <wsdl:part name="getColumnStringsReturn" type="impl:ArrayOf_xsd_anyType" />
+  </wsdl:message>
+  <wsdl:message name="verifyUserRequest">
+    <wsdl:part name="username" type="xsd:string" />
+    <wsdl:part name="password" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getColumnStringsRequest">
+    <wsdl:part name="sql" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="WorkRegisterRequest">
+    <wsdl:part name="iMAC" type="xsd:string" />
+    <wsdl:part name="iCardCode" type="xsd:string" />
+    <wsdl:part name="iFlag" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:portType name="RfEntry">
+    <wsdl:operation name="main" parameterOrder="arg">
+      <wsdl:input name="mainRequest" message="impl:mainRequest" />
+      <wsdl:output name="mainResponse" message="impl:mainResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataTableC" parameterOrder="sql">
+      <wsdl:input name="GetDataTableCRequest" message="impl:GetDataTableCRequest" />
+      <wsdl:output name="GetDataTableCResponse" message="impl:GetDataTableCResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="downloadFile" parameterOrder="sql colname">
+      <wsdl:input name="downloadFileRequest" message="impl:downloadFileRequest" />
+      <wsdl:output name="downloadFileResponse" message="impl:downloadFileResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="Hello">
+      <wsdl:input name="HelloRequest" message="impl:HelloRequest" />
+      <wsdl:output name="HelloResponse" message="impl:HelloResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="WorkRegister" parameterOrder="iMAC iCardCode iFlag">
+      <wsdl:input name="WorkRegisterRequest" message="impl:WorkRegisterRequest" />
+      <wsdl:output name="WorkRegisterResponse" message="impl:WorkRegisterResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="verifyUser" parameterOrder="username password">
+      <wsdl:input name="verifyUserRequest" message="impl:verifyUserRequest" />
+      <wsdl:output name="verifyUserResponse" message="impl:verifyUserResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getDataTable" parameterOrder="sql">
+      <wsdl:input name="getDataTableRequest" message="impl:getDataTableRequest" />
+      <wsdl:output name="getDataTableResponse" message="impl:getDataTableResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckRoutePassed" parameterOrder="Sn Resource">
+      <wsdl:input name="CheckRoutePassedRequest" message="impl:CheckRoutePassedRequest" />
+      <wsdl:output name="CheckRoutePassedResponse" message="impl:CheckRoutePassedResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTerminalRes" parameterOrder="iMAC iUserid iPassword iLineCode iResCode">
+      <wsdl:input name="UpdateTerminalResRequest" message="impl:UpdateTerminalResRequest" />
+      <wsdl:output name="UpdateTerminalResResponse" message="impl:UpdateTerminalResResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getColumnStringAll" parameterOrder="sql">
+      <wsdl:input name="getColumnStringAllRequest" message="impl:getColumnStringAllRequest" />
+      <wsdl:output name="getColumnStringAllResponse" message="impl:getColumnStringAllResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getColumnStrings" parameterOrder="sql">
+      <wsdl:input name="getColumnStringsRequest" message="impl:getColumnStringsRequest" />
+      <wsdl:output name="getColumnStringsResponse" message="impl:getColumnStringsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserAndResourcePassed" parameterOrder="iUserCode iRescode iPassWord">
+      <wsdl:input name="CheckUserAndResourcePassedRequest" message="impl:CheckUserAndResourcePassedRequest" />
+      <wsdl:output name="CheckUserAndResourcePassedResponse" message="impl:CheckUserAndResourcePassedResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="TerminalRegister" parameterOrder="iMAC iUserid iPassword iLineCode iResCode">
+      <wsdl:input name="TerminalRegisterRequest" message="impl:TerminalRegisterRequest" />
+      <wsdl:output name="TerminalRegisterResponse" message="impl:TerminalRegisterResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Table_Date" parameterOrder="TableName TableType SqlString">
+      <wsdl:input name="Get_Table_DateRequest" message="impl:Get_Table_DateRequest" />
+      <wsdl:output name="Get_Table_DateResponse" message="impl:Get_Table_DateResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getColumnString" parameterOrder="sql">
+      <wsdl:input name="getColumnStringRequest" message="impl:getColumnStringRequest" />
+      <wsdl:output name="getColumnStringResponse" message="impl:getColumnStringResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RfEntrySoapBinding" type="impl:RfEntry">
+    <wsdlsoap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <wsdl:operation name="main">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="mainRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="mainResponse">
+        <wsdlsoap:body use="encoded" namespace="http://192.168.10.19:8080/axis/RfEntry.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataTableC">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="GetDataTableCRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="GetDataTableCResponse">
+        <wsdlsoap:body use="encoded" namespace="http://192.168.10.19:8080/axis/RfEntry.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="downloadFile">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="downloadFileRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="downloadFileResponse">
+        <wsdlsoap:body use="encoded" namespace="http://192.168.10.19:8080/axis/RfEntry.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Hello">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="HelloRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="HelloResponse">
+        <wsdlsoap:body use="encoded" namespace="http://192.168.10.19:8080/axis/RfEntry.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WorkRegister">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="WorkRegisterRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="WorkRegisterResponse">
+        <wsdlsoap:body use="encoded" namespace="http://192.168.10.19:8080/axis/RfEntry.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="verifyUser">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="verifyUserRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="verifyUserResponse">
+        <wsdlsoap:body use="encoded" namespace="http://192.168.10.19:8080/axis/RfEntry.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDataTable">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getDataTableRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="getDataTableResponse">
+        <wsdlsoap:body use="encoded" namespace="http://192.168.10.19:8080/axis/RfEntry.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckRoutePassed">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="CheckRoutePassedRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="CheckRoutePassedResponse">
+        <wsdlsoap:body use="encoded" namespace="http://192.168.10.19:8080/axis/RfEntry.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTerminalRes">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="UpdateTerminalResRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="UpdateTerminalResResponse">
+        <wsdlsoap:body use="encoded" namespace="http://192.168.10.19:8080/axis/RfEntry.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getColumnStringAll">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getColumnStringAllRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="getColumnStringAllResponse">
+        <wsdlsoap:body use="encoded" namespace="http://192.168.10.19:8080/axis/RfEntry.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getColumnStrings">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getColumnStringsRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="getColumnStringsResponse">
+        <wsdlsoap:body use="encoded" namespace="http://192.168.10.19:8080/axis/RfEntry.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserAndResourcePassed">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="CheckUserAndResourcePassedRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="CheckUserAndResourcePassedResponse">
+        <wsdlsoap:body use="encoded" namespace="http://192.168.10.19:8080/axis/RfEntry.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TerminalRegister">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="TerminalRegisterRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="TerminalRegisterResponse">
+        <wsdlsoap:body use="encoded" namespace="http://192.168.10.19:8080/axis/RfEntry.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Table_Date">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="Get_Table_DateRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="Get_Table_DateResponse">
+        <wsdlsoap:body use="encoded" namespace="http://192.168.10.19:8080/axis/RfEntry.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getColumnString">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getColumnStringRequest">
+        <wsdlsoap:body use="encoded" namespace="http://DefaultNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="getColumnStringResponse">
+        <wsdlsoap:body use="encoded" namespace="http://192.168.10.19:8080/axis/RfEntry.jws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RfEntryService">
+    <wsdl:port name="RfEntry" binding="impl:RfEntrySoapBinding">
+      <wsdlsoap:address location="http://192.168.10.19:8080/axis/RfEntry.jws" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

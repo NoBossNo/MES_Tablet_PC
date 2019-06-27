@@ -1,0 +1,15 @@
+C:\Users\Administrator\Desktop\QueryService_1\MES_Tablet_PC\MES_Tablet_PC\bin\Debug\MES_Tablet_PC.exe
+C:\Users\Administrator\Desktop\QueryService_1\MES_Tablet_PC\MES_Tablet_PC\bin\Debug\MES_Tablet_PC.pdb
+C:\Users\Administrator\Desktop\QueryService_1\MES_Tablet_PC\MES_Tablet_PC\obj\x86\Debug\MES_Tablet_PC.main.resources
+C:\Users\Administrator\Desktop\QueryService_1\MES_Tablet_PC\MES_Tablet_PC\obj\x86\Debug\MES_Tablet_PC.Properties.Resources.resources
+C:\Users\Administrator\Desktop\QueryService_1\MES_Tablet_PC\MES_Tablet_PC\obj\x86\Debug\MES_Tablet_PC.csproj.GenerateResource.Cache
+C:\Users\Administrator\Desktop\QueryService_1\MES_Tablet_PC\MES_Tablet_PC\obj\x86\Debug\MES_Tablet_PC.exe
+C:\Users\Administrator\Desktop\QueryService_1\MES_Tablet_PC\MES_Tablet_PC\obj\x86\Debug\MES_Tablet_PC.pdb
+C:\Users\Administrator\Desktop\QueryService_1\MES_Tablet_PC\MES_Tablet_PC\obj\x86\Debug\MES_Tablet_PC.login.resources
+C:\Users\Administrator\Desktop\QueryService_1\MES_Tablet_PC\MES_Tablet_PC\obj\x86\Debug\MES_Tablet_PC.registration.resources
+C:\Users\Administrator\Desktop\QueryService_1\MES_Tablet_PC\MES_Tablet_PC\obj\x86\Debug\MES_Tablet_PC.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\QueryService_1\MES_Tablet_PC\MES_Tablet_PC\bin\Debug\MES_Tablet_PC.exe.config
+C:\Users\Administrator\Desktop\QueryService_1\MES_Tablet_PC\MES_Tablet_PC\obj\x86\Debug\MES_Tablet_PC.Get_comboBox1.resources
+C:\Users\Administrator\Desktop\QueryService_1\MES_Tablet_PC\MES_Tablet_PC\obj\x86\Debug\MES_Tablet_PC.Get_comboBox2.resources
+C:\Users\Administrator\Desktop\QueryService_1\MES_Tablet_PC\MES_Tablet_PC\obj\x86\Debug\MES_Tablet_PC.PICTURE_BOX.resources
+C:\Users\Administrator\Desktop\QueryService_1\MES_Tablet_PC\MES_Tablet_PC\obj\x86\Debug\MES_Tablet_PC.Error_Applyfor.resources
